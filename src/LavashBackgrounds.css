@@ -1,0 +1,147 @@
+/* =====================================================
+   LAVASH CAFE — LARGE BACKGROUND PHOTOS
+   Premium Black & Gold Design
+   ===================================================== */
+
+/* HOME — Large hero photo with text in front */
+.hero-section {
+  position: relative;
+  isolation: isolate;
+  min-height: min(820px, calc(100svh - 88px));
+  background-color: #111111;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.48) 0%,
+      rgba(0, 0, 0, 0.28) 48%,
+      rgba(0, 0, 0, 0.10) 100%
+    ),
+    url("/images/cafe-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ABOUT US — Interior photo behind the text */
+.about-section {
+  position: relative;
+  isolation: isolate;
+  background-color: #111111;
+}
+
+.about-section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url("/images/cafe-interior.jpg") center / cover no-repeat;
+  content: "";
+  pointer-events: none;
+}
+
+/* Remove the old decorative logo placeholder */
+.about-visual {
+  display: none;
+}
+
+/* About Us content */
+.about-content {
+  grid-column: 1 / -1;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.about-content h2,
+.about-content > p:not(.eyebrow) {
+  color: #ffffff;
+}
+
+/* SERVICES — Large background photo behind service cards */
+.services-section {
+  position: relative;
+  isolation: isolate;
+  background-color: #111111;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.38),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url("/images/cafe-services.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Services headings */
+.services-section .section-heading h2,
+.services-section .section-heading > p:last-child {
+  color: #ffffff;
+}
+
+/* Keep service cards readable */
+.services-section .menu-card {
+  background: rgba(12, 12, 12, 0.78);
+  border-color: rgba(212, 175, 55, 0.65);
+}
+
+/* VISIT US — Exterior photo behind location and contacts */
+.visit-section {
+  position: relative;
+  isolation: isolate;
+  background-color: #111111;
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.48)
+    ),
+    url("/images/cafe-exterior.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Visit Us headings */
+.visit-section .section-heading h2,
+.visit-section .section-heading > p:last-child {
+  color: #ffffff;
+}
+
+/* Keep location and contact cards readable */
+.visit-card {
+  background: rgba(10, 10, 10, 0.80);
+  border-color: rgba(212, 175, 55, 0.60);
+}
+
+/* Keep foreground content above the backgrounds */
+.hero-content,
+.about-content,
+.services-section .section-heading,
+.services-section .featured-grid,
+.visit-section .section-heading,
+.visit-section .visit-card {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hero-section {
+    min-height: min(760px, calc(100svh - 120px));
+    background-position: 58% center;
+  }
+
+  .about-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .services-section,
+  .visit-section {
+    background-position: center;
+  }
+}

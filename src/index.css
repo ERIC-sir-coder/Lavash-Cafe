@@ -1,0 +1,244 @@
+/* =========================================================
+   LAVASH CAFE — GLOBAL DESIGN SYSTEM
+   Premium Black & Gold Theme
+   ========================================================= */
+
+:root {
+  /* Brand Colors */
+  --bg: #0A0A0A;
+  --bg-secondary: #111111;
+  --surface: #1C1C1C;
+  --surface-hover: #262626;
+
+  --gold: #D4AF37;
+  --gold-light: #E6C65A;
+  --gold-dark: #A88924;
+
+  /* Text Colors */
+  --text: #B8B8B8;
+  --text-h: #FFFFFF;
+  --text-muted: #888888;
+
+  /* Interface Colors */
+  --border: #333333;
+  --border-gold: rgba(212, 175, 55, 0.35);
+  --code-bg: #1C1C1C;
+
+  --accent: var(--gold);
+  --accent-bg: rgba(212, 175, 55, 0.12);
+  --accent-border: rgba(212, 175, 55, 0.5);
+
+  /* Shadows */
+  --shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.2);
+
+  --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.12);
+
+  /* Typography */
+  --sans: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --heading: "Playfair Display", Georgia, serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  /* Global Defaults */
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+
+  color: var(--text);
+  background: var(--bg);
+  color-scheme: dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================================
+   BOX SIZING & PAGE FOUNDATION
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: var(--bg);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  text-align: left;
+}
+
+/* =========================================================
+   HEADINGS
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--text-h);
+  font-family: var(--heading);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   TEXT & LINKS
+   ========================================================= */
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    opacity 0.25s ease;
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+img,
+picture,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+
+::selection {
+  color: var(--bg);
+  background: var(--gold);
+}
+
+/* =========================================================
+   CODE ELEMENTS
+   ========================================================= */
+
+code,
+pre {
+  font-family: var(--mono);
+}
+
+code {
+  display: inline-flex;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: var(--code-bg);
+  color: var(--gold);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================= */
+
+@media (max-width: 767px) {
+  :root {
+    font-size: 15px;
+  }
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  h1 {
+    letter-spacing: -0.025em;
+  }
+}
+
+@media (max-width: 374px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY & MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
